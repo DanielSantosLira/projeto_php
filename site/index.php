@@ -46,52 +46,76 @@ include "cabecalho.php"
   </div>
   <div class="row">
     <?php
-    for ($i = 0; $i < 8; $i++) :
+    $servidor = "127.0.0.1";
+    $usuario = "root";
+    $senha_bd = "";
+    $banco_de_dados = "delivery_jogos_novo";
 
+
+    $conexao = mysqli_connect($servidor, $usuario, $senha_bd, $banco_de_dados);
+
+    $sql_buscar = "select * from jogo";
+
+    $todos_os_jogos = mysqli_query($conexao, $sql_buscar);
+
+    while ($um_jogo = mysqli_fetch_assoc($todos_os_jogos)) :
     ?>
       <div class="col-md-3 text-center mb-4">
-        <img src="img/foto10.png" alt="" class="img-fluid">
-        <h5 class="mt-3 mb-3">Nome do Jogo</h5>
-        <a href="nomedojogo.php" class="btn btn-outline-primary">VER-MAIS </a>
+        <img src="<?php echo $um_jogo["foto"]; ?>" class="img-fluid">
+        <h5 class="mt-3 mb-3"><?php echo $um_jogo["titulo"]; ?></h5>
+        <?php
+        $cor = "";
+        if  (strtoupper($um_jogo["categoria"]) == "TESTE") {
+          $cor = "red";
+        } else if (strtoupper($um_jogo["categoria"]) == "AVENTURA") {
+          $cor = "green";
+        }
+        ?>
+        <h5 class="mt-3 mb-3" style="color:<?php echo $cor; ?>"><?php echo $um_jogo["categoria"]; ?></h5>
+        <a href="<?php echo $um_jogo["video"]; ?>" class="btn btn-outline-primary">VER-MAIS </a>
       </div>
+
     <?php
-    endfor;
+    endwhile;
     ?>
 
   </div>
-  <div class="row mt-5 text-center">
-    <di class="col-12 ">
-      <h2>Entre em contato</h2>
-    </di>
-    <di class="col-12 ">
-      <p>Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Aut cumque iste
-        obcaecati, hic sit nesciunt quam nulla quidem
-        voluptatem officia rem ipsam ab cum accusantium
-        illum odit quaerat quisquam vel.</p>
-    </di>
-  </div>
-  <div class="row">
-    <form action="inserir-contato.php" method="post">
-      <div class="col">
-        <div class="mb-3">
-          <input type="text" class="form-control" name="nome" placeholder="Nome">
+  <div class="container">
+    <div class="row mt-5 text-center">
+      <di class="col-12 ">
+        <h2>Entre em contato</h2>
+      </di>
+      <di class="col-12 ">
+        <p>Lorem ipsum dolor sit amet<br>
+          consectetur adipisicing elit. Aut cumque iste<br>
+          obcaecati, hic sit nesciunt quam nulla quidem<br>
+          voluptatem officia rem ipsam ab cum accusantium<br>
+          illum odit quaerat quisquam vel.</p>
+      </di>
+    </div>
+    <div class="row">
+      <form action="inserir-contato.php" method="post">
+        <div class="col-5 mx-auto">
+          <div class="mb-3">
+            <input type="text" class="form-control" name="nome" placeholder="Nome">
+          </div>
+          <div class="mb-3">
+            <input type="tel" class="form-control" name="telefone" placeholder="Telefone">
+          </div>
+          <div class="mb-2">
+            <textarea class="form-control" name="duvida" placeholder="Duvida" rows="4"></textarea>
+          </div>
+          <div class="mb-2 text-center">
+            <button type="submit" class="btn btn-success w-50">Entar</button>
+          </div>
+
         </div>
-        <div class="mb-3">
-          <input type="tel" class="form-control" name="telefone" placeholder="Telefone">
-        </div>
-        <div class="mb-2">
-          <textarea class="form-control" name="duvida" placeholder="Duvida" rows="4"></textarea>
-        </div>
-        <div class="mb-2 text-center">
-          <button type="submit" class="btn btn-success w-25">Entar</button>
-        </div>
-      </div>
-    </form>
+
+      </form>
+    </div>
   </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
- 
+
 </html>
