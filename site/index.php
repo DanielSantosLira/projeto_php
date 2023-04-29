@@ -65,8 +65,8 @@ include "cabecalho.php"
         <h5 class="mt-3 mb-3"><?php echo $um_jogo["titulo"]; ?></h5>
         <?php
         $cor = "";
-        if  (strtoupper($um_jogo["categoria"]) == "TESTE") {
-          $cor = "red";
+        if  (strtoupper($um_jogo["categoria"]) == "AÇÃO") {
+          $cor = "blue";
         } else if (strtoupper($um_jogo["categoria"]) == "AVENTURA") {
           $cor = "green";
         }
