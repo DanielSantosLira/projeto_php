@@ -62,10 +62,11 @@ include "cabecalho.php"
     ?>
       <div class="col-md-3 text-center mb-4">
         <img src="<?php echo $um_jogo["foto"]; ?>" class="img-fluid">
+
         <h5 class="mt-3 mb-3"><?php echo $um_jogo["titulo"]; ?></h5>
         <?php
-        $cor = "";
-        if(strtoupper($um_jogo["categoria"]) == "AÇÃO") {
+        $cor = "red";
+        if (strtoupper($um_jogo["categoria"]) == "AÇÃO") {
           $cor = "red";
         } else if (strtoupper($um_jogo["categoria"]) == "AVENTURA") {
           $cor = "green";
@@ -77,6 +78,7 @@ include "cabecalho.php"
 
     <?php
     endwhile;
+    mysqli_close($conexao);
     ?>
 
   </div>
