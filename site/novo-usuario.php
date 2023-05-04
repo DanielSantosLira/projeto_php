@@ -20,12 +20,19 @@ include "menu.php";
     <div class="row mt-3">
         <div class="col-12">
             <form action=" salvar-usuario.php" method="post">
-            <div class="col-5 mx-auto">
-                <input type="text" name="nome" class="form-control me-2" required placeholder="Nome"> <br>
-                <input type="email" name="email" class="form-control me-2" required placeholder="E-mail"> <br>
-                <input type="text" name="senha" class="form-control me-2" required placeholder="Senha"> <br>
-                <button type="submit" class="btn btn-success">Salvar Usuário</button>
-            </div>
+                <div class="col-5 mx-auto">
+                    <input type="text" name="nome" class="form-control me-2" required placeholder="Nome"> <br>
+                    <input type="email" name="email" class="form-control me-2" required placeholder="E-mail"> <br>
+                    <input type="password" name="senha" class="form-control me-2" required placeholder="Senha"> <br>
+                    <button type="submit" class="btn btn-success">Salvar Usuário</button>
+
+                    <?php
+                    $mesagem = $_GET["msg"] ?? "";
+                    if ($mesagem == "sucesso") {
+                        echo "<em class='text-success'>Usuário e senha cadastrado com sucesso</em>";
+                    }
+                    ?>
+                </div>
             </form>
         </div>
     </div>
