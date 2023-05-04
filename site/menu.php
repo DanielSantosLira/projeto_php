@@ -30,9 +30,9 @@
         </ul>
 
         <form action="login.php" class="d-flex" method="post">
-          <input class="form-control me-2" type="email" placeholder="E-mail" aria-label="E-mail" name="email">
+          <input class="form-control me-2" type="email" placeholder="E-mail" aria-label="E-mail" name="email" id="email">
 
-          <input class="form-control me-2" type="senha" placeholder="Senha" aria-label="Senha">
+          <input class="form-control me-2" type="senha" placeholder="Senha" aria-label="Senha" name="senha" id="senha">
           <button class="btn btn-outline-success me-2" type="submit">Entar</button>
           <a href="novo-usuario.php" class="btn btn-outline-primary me-2">Cadastrar</a>
         </form>

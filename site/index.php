@@ -46,14 +46,7 @@ include "cabecalho.php"
   </div>
   <div class="row">
     <?php
-    $servidor = "127.0.0.1";
-    $usuario = "root";
-    $senha_bd = "";
-    $banco_de_dados = "delivery_jogos_novo";
-
-
-    $conexao = mysqli_connect($servidor, $usuario, $senha_bd, $banco_de_dados);
-
+    include "conexao.php";
     $sql_buscar = "select * from jogo";
 
     $todos_os_jogos = mysqli_query($conexao, $sql_buscar);
