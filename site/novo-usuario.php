@@ -25,13 +25,14 @@ include "menu.php";
                     <input type="email" name="email" class="form-control me-2" required placeholder="E-mail"> <br>
                     <input type="password" name="senha" class="form-control me-2" required placeholder="Senha"> <br>
                     <button type="submit" class="btn btn-success">Salvar Usuário</button>
-
-                    <?php
-                    $mesagem = $_GET["msg"] ?? "";
-                    if ($mesagem == "sucesso") {
-                        echo "<em class='text-success'>Usuário e senha cadastrado com sucesso</em>";
-                    }
-                    ?>
+                   
+                        <?php
+                        $mesagem = $_GET["msg"] ?? "";
+                        if ($mesagem == "sucesso") {
+                            echo "<em class='alert alert-primary'>Usuário e senha cadastrado com sucesso</em>";
+                        }
+                        ?>
+                   
                 </div>
             </form>
         </div>
