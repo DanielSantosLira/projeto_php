@@ -3,11 +3,11 @@ include "cabecalho.php";
 include "menu-sistema.php";
 
 ?>
-<div class="container">
+<div class="container mt-3">
     <div class="row">
         <div class="col">
-            <a href="listar-jogos.php">Gerenciar Jogos</a>
-            <a href="listar-usuario.php">Gerenciar Usuário</a>
+            <a href="listar-jogos.php" class="link-danger">Gerenciar Jogos</a>
+            <a href="listar-usuario.php"  class="link-secondary">Gerenciar Usuário</a>
         </div>
     </div>
 </div>

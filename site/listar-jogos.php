@@ -17,7 +17,8 @@ include "menu-sistema.php";
                 <tr class="table-primary">
                     <td class="table-primary">Codigo</td>
                     <td class="table-primary">Título</td>
-                    <td class="table-primary">Categori</td>
+                    <td class="table-primary">Categoria</td>
+                    
                     <td class="table-primary">Acões</td>
                 </tr>
                 <?php
@@ -36,6 +37,8 @@ include "menu-sistema.php";
                             <a href="excluir-jogos.php?id=<?php echo $um_jogo["id"];?>">
                                 <img src="img/delete_icon.png" alt="" width="20">
                             </a>
+                            <a href="ver-jogo.php?id=<?php echo $um_jogo["id"]; ?>"> <img src="img/lopa.png" alt="" width="30px"class="rounded float-left"></a>
+                            <a href="editar-jogo.php?id=<?php echo $um_jogo["id"]; ?>"><img src="img/edit.png" alt="" width="30px" class="rounded float-left"></a>
                         </td>
 
                     </tr>
