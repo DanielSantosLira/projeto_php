@@ -4,17 +4,22 @@ include "menu.php";
 
 ?>
 
-<div class="container-fluid banner">
+<div class="container-fluid banner carousel slide">
+<div class="carousel-indicators" >
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
   <div id="carouselExample" class="carousel slide carousel-fade">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="img/foto2.png" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="img/foto4.png" class="d-block w-100" alt="...">
+        <img src="img/foto3.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="img/foto3.jpg" class="d-block w-100" alt="...">
+        <img src="img/foto4.png" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -67,7 +72,7 @@ include "menu.php";
         }
         ?>
         <h5 class="mt-3 mb-3" style="color:<?php echo $cor; ?>"><?php echo $um_jogo["categoria"]; ?></h5>
-        <a href="<?php echo $um_jogo["video"]; ?> " class="btn btn-outline-primary ">VER-MAIS </a>
+        <a href="<?php echo $um_jogo["video"]; ?> " class="btn btn-outline-primary " >VER-MAIS </a>
       </div>
 
     <?php
