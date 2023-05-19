@@ -20,6 +20,9 @@
           <a class="nav-link " href="listar-usuario.php">Usuário</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link " href="novo-jogo.php">Novo Jogo</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link " href="index.php"><b>Sair</b></a>
         </li>
 

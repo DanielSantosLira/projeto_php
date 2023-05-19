@@ -8,6 +8,7 @@ include "menu-sistema.php";
         <div class="col">
             <a href="listar-jogos.php" class="link-danger">Gerenciar Jogos</a>
             <a href="listar-usuario.php"  class="link-secondary">Gerenciar Usuário</a>
+            <a href="novo-jogo.php"  class="link-secondary">Cadastar Jogo</a>
         </div>
     </div>
 </div>

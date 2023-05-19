@@ -28,10 +28,10 @@ mysqli_close($conexao);
                 <label for="exampleInputEmail1">Nome</label><input name="nome" value="<?php echo $nome; ?>" class="form-control">
             </div>
             <div class="form-group mt-3">
-                Foto :<input name="email" value="<?php echo $email; ?>" class="form-control">
+                E-mail <input name="email" value="<?php echo $email; ?>" class="form-control">
             </div>
             <div class="form-group mt-3">
-                <label for="exampleInputEmail1">Senha</label> :<input type="password" name="senha" value="<?php echo $senha; ?>" class="form-control">
+                <label for="exampleInputEmail1">Senha</label> <input type="password" name="senha" value="<?php echo $senha; ?>" class="form-control">
             </div>
           
             <div class="form-group mt-3">

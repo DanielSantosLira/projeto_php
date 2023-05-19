@@ -32,11 +32,13 @@ include "menu-sistema.php";
                             <td><?php echo $um_usuario["id"]; ?></td>
                             <td><?php echo $um_usuario["nome"]; ?></td>
                             <td><?php echo  $um_usuario["email"]; ?></td>
-                            <td><img src="img/delete_icon.png" alt=""width="20">
-                            
-                            <a href="ver-usuario.php?id=<?php echo $um_usuario["id"]; ?>"><img src="img/lopa.png" alt="" width="30px"class="rounded float-left"></a>
-                            <a href="editar-usuario.php?id=<?php echo $um_usuario["id"]; ?>"><img src="img/edit.png" alt="" width="30px" class="rounded float-left"></a>
-                        </td>
+                            <td>
+                                <a href="excluir-usuario.php?id=<?php echo $um_usuario["id"]; ?>">
+                                    <img src="img/delete_icon.png" alt="" width="20">
+                                </a>
+                                <a href="ver-usuario.php?id=<?php echo $um_usuario["id"]; ?>"><img src="img/lopa.png" alt="" width="30px" class="rounded float-left"></a>
+                                <a href="editar-usuario.php?id=<?php echo $um_usuario["id"]; ?>"><img src="img/edit.png" alt="" width="30px" class="rounded float-left"></a>
+                            </td>
                         </tr>
                     <?php
                     endwhile;
