@@ -5,53 +5,54 @@ include "menu.php";
 ?>
 
 <div class="container-fluid banner carousel slide">
-<div class="carousel-indicators" >
-    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
-    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div id="carouselExample" class="carousel slide carousel-fade">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/foto2.png" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="img/foto3.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="img/foto4.png" class="d-block w-100" alt="...">
-      </div>
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+    <div id="carouselExample" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/foto2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/foto3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/foto4.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </div>
 
 <div class="container mt-2">
-  <div class="row">
-    <div class="col-12 text-center">
-      <h1>Jogos em Destaque</h1>
-    </div>
-    <div class="col-12 text-center">
-      <p>Lorem ipsum, dolor sit amet
-        consectetur adipisicing elit.
-        Nisi sapiente id ut impedit
-        inventore vitae! Dolorum eius,
-        in dignissimos amet omnis,
-        explicabo voluptates laboriosam
-        cumque harum doloremque unde odio adipisci!
-      </p>
-    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>Jogos em Destaque</h1>
+        </div>
+        <div class="col-12 text-center">
+            <p>Lorem ipsum, dolor sit amet
+                consectetur adipisicing elit.
+                Nisi sapiente id ut impedit
+                inventore vitae! Dolorum eius,
+                in dignissimos amet omnis,
+                explicabo voluptates laboriosam
+                cumque harum doloremque unde odio adipisci!
+            </p>
+        </div>
 
-  </div>
-  <div class="row">
-    <?php
+    </div>
+    <div class="row">
+        <?php
     include "conexao.php";
     $sql_buscar = "select * from jogo";
 
@@ -59,11 +60,11 @@ include "menu.php";
 
     while ($um_jogo = mysqli_fetch_assoc($todos_os_jogos)) :
     ?>
-      <div class="col-md-3 text-center mb-4">
-        <img src="<?php echo $um_jogo["foto"]; ?>" class="img-fluid">
+        <div class="col-md-3 text-center mb-4">
+            <img src="<?php echo $um_jogo["foto"]; ?>" class="img-fluid">
 
-        <h5 class="mt-3 mb-3"><?php echo $um_jogo["titulo"]; ?></h5>
-        <?php
+            <h5 class="mt-3 mb-3"><?php echo $um_jogo["titulo"]; ?></h5>
+            <?php
         $cor = "red";
         if (strtoupper($um_jogo["categoria"]) == "AÇÃO") {
           $cor = "red";
@@ -71,140 +72,145 @@ include "menu.php";
           $cor = "green";
         }
         ?>
-        <h5 class="mt-3 mb-3" style="color:<?php echo $cor; ?>"><?php echo $um_jogo["categoria"]; ?></h5>
-        <a href="<?php echo $um_jogo["video"]; ?> " class="btn btn-outline-primary " >VER-MAIS </a>
-      </div>
+            <h5 class="mt-3 mb-3" style="color:<?php echo $cor; ?>"><?php echo $um_jogo["categoria"]; ?></h5>
+            <a href="<?php echo $um_jogo["video"]; ?> " class="btn btn-outline-primary ">VER-MAIS </a>
+        </div>
 
-    <?php
+        <?php
     endwhile;
     mysqli_close($conexao);
     ?>
 
-  </div>
-  <div class="container">
-    <div class="row mt-5 text-center">
-      <di class="col-12 ">
-        <h2>Entre em contato</h2>
-      </di>
-      <di class="col-12 ">
-        <p>Lorem ipsum dolor sit amet<br>
-          consectetur adipisicing elit. Aut cumque iste<br>
-          obcaecati, hic sit nesciunt quam nulla quidem<br>
-          voluptatem officia rem ipsam ab cum accusantium<br>
-          illum odit quaerat quisquam vel.</p>
-      </di>
     </div>
-    <div class="row">
-      <form action="inserir-contato.php" method="post">
-        <div class="col-5 mx-auto">
-          <div class="mb-3">
-            <input type="text" class="form-control" name="nome" placeholder="Nome">
-          </div>
-          <div class="mb-3">
-            <input type="tel" class="form-control" name="telefone" placeholder="Telefone">
-          </div>
-          <div class="mb-2">
-            <textarea class="form-control" name="duvida" placeholder="Duvida" rows="4"></textarea>
-          </div>
-          <div class="mb-2 text-center">
-            <button type="submit" class="btn btn-success w-50">Entar</button>
-          </div>
-
+    <div class="container">
+        <div class="row mt-5 text-center">
+            <di class="col-12 ">
+                <h2>Entre em contato</h2>
+            </di>
+            <di class="col-12 ">
+                <p>Lorem ipsum dolor sit amet<br>
+                    consectetur adipisicing elit. Aut cumque iste<br>
+                    obcaecati, hic sit nesciunt quam nulla quidem<br>
+                    voluptatem officia rem ipsam ab cum accusantium<br>
+                    illum odit quaerat quisquam vel.</p>
+            </di>
         </div>
+        <div class="row">
+            <form action="inserir-contato.php" method="post">
+                <div class="col-5 mx-auto">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="nome" placeholder="Nome">
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" name="telefone" placeholder="Telefone">
+                    </div>
+                    <div class="mb-2">
+                        <textarea class="form-control" name="duvida" placeholder="Duvida" rows="4"></textarea>
+                    </div>
+                    <div class="mb-2 text-center">
+                        <button type="submit" class="btn btn-success w-50">Entar</button>
+                    </div>
 
-      </form>
+                </div>
+
+            </form>
+        </div>
     </div>
-  </div>
 </div>
 <!-- Footer -->
 <footer class="bg-dark text-center text-white pt-3">
-  <!-- Grid container -->
-  <div class="container p-4 pt-3">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+    <!-- Grid container -->
+    <div class="container p-4 pt-3">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-facebook-f"></i></a>
 
-      <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
 
-      <!-- Google -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
 
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-instagram"></i></a>
 
-      <!-- Linkedin -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-linkedin-in"></i></a>
 
-      <!-- Github -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-    </section>
-    <!-- Section: Social media -->
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
 
-    <!-- Section: Form -->
-    <section class="">
-      <form action="">
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center">
-          <!--Grid column-->
-          <div class="col-auto">
-            <p class="pt-2">
-              <strong>Pesquizar</strong>
+        <!-- Section: Form -->
+        <section class="">
+            <form action="">
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Pesquizar</strong>
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-5 col-12">
+                        <!-- Email input -->
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" id="form5Example21" class="form-control" />
+                            <label class="form-label" for="form5Example21">Email address</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-outline-light mb-4">
+                            Enviar
+                        </button>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </form>
+        </section>
+        <!-- Section: Form -->
+
+        <!-- Section: Text -->
+        <section class="mb-4">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                eum harum corrupti dicta, aliquam sequi voluptate quas.
             </p>
-          </div>
-          <!--Grid column-->
+        </section>
+        <!-- Section: Text -->
 
-          <!--Grid column-->
-          <div class="col-md-5 col-12">
-            <!-- Email input -->
-            <div class="form-outline form-white mb-4">
-              <input type="email" id="form5Example21" class="form-control" />
-              <label class="form-label" for="form5Example21">Email address</label>
-            </div>
-          </div>
-          <!--Grid column-->
+        <!-- Section: Links -->
 
-          <!--Grid column-->
-          <div class="col-auto">
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-outline-light mb-4">
-              Enviar
-            </button>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </form>
-    </section>
-    <!-- Section: Form -->
+        <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
 
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-        eum harum corrupti dicta, aliquam sequi voluptate quas.
-      </p>
-    </section>
-    <!-- Section: Text -->
-
-    <!-- Section: Links -->
-    
-    <!-- Section: Links -->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
 </footer>
 <!-- Footer -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+</script>
 </body>
 
 </html>
